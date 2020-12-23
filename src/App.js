@@ -29,11 +29,8 @@ export default class App extends React.Component {
           {this.state.loading || !this.state.movie ? (
             <div className="loading">Loading...</div>
           ) : (
-            <div>
-              <div>{this.state.movie.title}</div>
-            </div>  
+              <Results movie={this.state.movie} />
           )}
-        <Results movie={this.state.movie} />
       </main>
     </div>
   );
