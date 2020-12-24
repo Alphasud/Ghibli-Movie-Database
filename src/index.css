@@ -49,12 +49,8 @@ section {
 
 .oneMovie {
 	min-width: 25%;
-	padding: 2rem;
-  cursor: pointer;
-  margin: 0rem .5rem 2rem .5rem
-}
-
-.oneMovie {
+	padding: 1rem;
+  margin: 0rem .5rem 2rem .5rem;
   background-color: lightsalmon;
   opacity: .9;
   color: beige;
@@ -62,11 +58,17 @@ section {
 }
 
 .oneMovie h3, p {
-  padding-top: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 .oneMovie p {
 }
 
 .oneMovie h1 {
+  display: inline-block;
   font-style: italic;
+  background-color: beige;
+  color: lightsalmon;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
 }

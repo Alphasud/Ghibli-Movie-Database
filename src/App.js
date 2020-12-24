@@ -6,7 +6,8 @@ export default class App extends React.Component {
 
   state = {
     loading: true,
-    movie: []
+    movie: [],
+    selected: {}
   };
   
   async componentDidMount() {
@@ -14,9 +15,9 @@ export default class App extends React.Component {
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ movie: data, loading: false });
-    console.log(data);
   }
 
+  
   render() {
 
   return (
@@ -37,4 +38,8 @@ export default class App extends React.Component {
   }
   
 }
+
+
+
+
 
