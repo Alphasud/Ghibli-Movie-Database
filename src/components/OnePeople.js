@@ -1,6 +1,6 @@
 import React from 'react'
 
-function OnePeople({ onePeople, oneMovie }) {
+function OnePeople({ onePeople }) {
 	return (
         <div className="oneMovie">
 			<h1>{onePeople.name}</h1>

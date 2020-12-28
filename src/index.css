@@ -36,6 +36,7 @@ nav {
   padding: 1rem;
   margin: 1rem 2rem;
   cursor: pointer;
+  outline: none;
   background-color: beige;
   border-radius: 10px;
   border: 1px solid lightsalmon;
@@ -78,6 +79,7 @@ section {
   opacity: .9;
   color: beige;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .oneMovie h3, p {
@@ -103,5 +105,6 @@ section {
   display: flex;
   align-items: center;
   border-radius: 5px;
+  margin-bottom: 2rem;
 
 }
