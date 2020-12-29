@@ -5,7 +5,7 @@ import OnePeople from './OnePeople'
 
 function ResultsPeople ({ people }) {
     return (
-            <section>
+            <section className="results">
 			{people.map(onePeople => (
 				<OnePeople onePeople={onePeople} key={onePeople.id} />
             ))}

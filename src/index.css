@@ -11,6 +11,7 @@ html {
 body {
   font-family:Georgia, 'Times New Roman', Times, serif ;
   background-color: beige;
+  color: lightsalmon;
 }
 
 header {
@@ -67,7 +68,7 @@ section {
 .results {
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-between;
+  justify-content:stretch;
   align-items: flex-start;
 }
 
@@ -95,7 +96,6 @@ section {
   color: lightsalmon;
   padding: 1rem;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .totoro {
@@ -106,5 +106,24 @@ section {
   align-items: center;
   border-radius: 5px;
   margin-bottom: 2rem;
+}
 
+footer {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+}
+.link{
+  text-decoration: none;
+  color: beige;
+  font-style: italic;
+  background-color: lightsalmon;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  transition: all .1s ease-in-out;
+}
+
+.link:hover {
+  scale: 1.1;
 }

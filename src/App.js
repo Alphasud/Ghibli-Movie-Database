@@ -1,6 +1,9 @@
 import React from 'react'
 import Results from './components/Results'
 import ResultsPeople from './components/ResultsPeople'
+import ResultsLocation from './components/ResultsLocation'
+import ResultsSpecie from './components/ResultsSpecie'
+import ResultsVehicle from './components/ResultsVehicle'
 import totoro from './img/totoro.jpg'
 
 
@@ -10,6 +13,9 @@ export default class App extends React.Component {
     loading: true,
     movie: [],
     people: [],
+    place: [],
+    specie: [],
+    vehicle: [],
     selected: {},
 
     films: false,
@@ -29,6 +35,21 @@ export default class App extends React.Component {
     const responsePeople = await fetch(urlPeople);
     const dataPeople = await responsePeople.json();
     this.setState({ people: dataPeople, loading: false });
+
+    const urlLocation = 'https://ghibliapi.herokuapp.com/locations';
+    const responseLocation = await fetch(urlLocation);
+    const dataLocation = await responseLocation.json();
+    this.setState({ place: dataLocation, loading: false });
+
+    const urlSpecie = 'https://ghibliapi.herokuapp.com/species';
+    const responseSpecie = await fetch(urlSpecie);
+    const dataSpecie = await responseSpecie.json();
+    this.setState({ specie: dataSpecie, loading: false });
+
+    const urlVehicle = 'https://ghibliapi.herokuapp.com/vehicles';
+    const responseVehicle = await fetch(urlVehicle);
+    const dataVehicle = await responseVehicle.json();
+    this.setState({ vehicle: dataVehicle, loading: false });
   }
 
   handleFilmsClick() {
@@ -76,7 +97,7 @@ export default class App extends React.Component {
     <div className="App">
       <header className="App-header">
         <h1>スタジオジブリ</h1>
-        <h1>Ghibli Studio Movie Database</h1>
+        <h1>Ghibli Studio Database</h1>
         <nav>
           <button className="button" onClick={() => this.handleFilmsClick()}>
           Films
@@ -111,6 +132,18 @@ export default class App extends React.Component {
           return (
             <ResultsPeople people={this.state.people} />
           )
+        } else if (this.state.locations) {
+          return (
+            <ResultsLocation place={this.state.place} />
+          )
+        } else if (this.state.species) {
+          return (
+            <ResultsSpecie specie={this.state.specie} />
+          )
+        } else if (this.state.vehicles) {
+          return (
+            <ResultsVehicle vehicle={this.state.vehicle} />
+          )  
         } else {
           return (
             <img className="totoro" src={totoro} alt="Totoro"/>
@@ -119,6 +152,9 @@ export default class App extends React.Component {
       })()}
         
       </main>
+      <footer>
+        <p>All data fetched from <a className="link" rel="noreferrer" target="_blank" href="https://ghibliapi.herokuapp.com/#">Studio Ghibli API</a></p>
+      </footer>
     </div>
   );
   }
