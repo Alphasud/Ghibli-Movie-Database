@@ -87,7 +87,13 @@ export default class App extends React.Component {
     this.setState({ locations: false });
     this.setState({ species: false });
   }
-
+  handleClick() {
+    this.setState({ vehicles: false });
+    this.setState({ films: false });
+    this.setState({ characters: false });
+    this.setState({ locations: false });
+    this.setState({ species: false });
+  }
 
   render() {
 
@@ -96,8 +102,8 @@ export default class App extends React.Component {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>スタジオジブリ</h1>
-        <h1>Ghibli Studio Database</h1>
+        <h1 onClick={() => this.handleClick()}>スタジオジブリ</h1>
+        <h1 onClick={() => this.handleClick()}>Ghibli Studio Database</h1>
         <nav>
           <button className="button" onClick={() => this.handleFilmsClick()}>
           Films
@@ -154,7 +160,7 @@ export default class App extends React.Component {
       </main>
       <footer>
         <p>All data fetched from <a className="link" rel="noreferrer" target="_blank" href="https://ghibliapi.herokuapp.com/#">Studio Ghibli API</a></p>
-      </footer>
+      </footer> 
     </div>
   );
   }
