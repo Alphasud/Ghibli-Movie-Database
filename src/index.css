@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -34,7 +35,19 @@ nav {
   flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 500px) {
+  header {
+  padding: 2.5rem .5rem 5rem;
+}
+.button {
+  font-size: 1.3rem !important;
+  padding: .5rem !important;
+}
+}
+
 .button { 
+  min-width: 10rem;
+  max-width: 10rem;
   padding: 1rem;
   margin: 1rem 2rem;
   cursor: pointer;
@@ -128,3 +141,26 @@ footer {
 .link:hover {
   scale: 1.1;
 }
+
+#top-button {
+  display: none;
+  position: fixed;
+  bottom: 2rem; 
+  left: 2rem;
+  z-index: 99;
+  border: 1px solid lightsalmon;
+  outline: none;
+  background-color: beige;
+  color: lightsalmon;
+  cursor: pointer;
+  padding: .8rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 99px;
+  animation: fadeIn .5s 1 ease-in;
+}
+
+@keyframes fadeIn {
+            0% {opacity: 0;}
+            100%{opacity: .9;}
+         }
+

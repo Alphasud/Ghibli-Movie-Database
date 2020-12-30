@@ -7,6 +7,7 @@ import ResultsVehicle from './components/ResultsVehicle'
 import totoro from './img/totoro.jpg'
 
 
+
 export default class App extends React.Component {
 
   state = {
@@ -50,6 +51,16 @@ export default class App extends React.Component {
     const responseVehicle = await fetch(urlVehicle);
     const dataVehicle = await responseVehicle.json();
     this.setState({ vehicle: dataVehicle, loading: false });
+
+    let mybutton = document.getElementById("top-button");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+  }
   }
 
   handleFilmsClick() {
@@ -94,6 +105,10 @@ export default class App extends React.Component {
     this.setState({ locations: false });
     this.setState({ species: false });
   }
+
+  toTop() { window.scrollTo(0, 0); }
+
+  
 
   render() {
 
@@ -161,6 +176,7 @@ export default class App extends React.Component {
       <footer>
         <p>All data fetched from <a className="link" rel="noreferrer" target="_blank" href="https://ghibliapi.herokuapp.com/#">Studio Ghibli API</a></p>
       </footer> 
+      <button id="top-button" onClick={() => this.toTop()}>	&uarr;</button>
     </div>
   );
   }
