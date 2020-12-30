@@ -5,6 +5,8 @@ import ResultsLocation from './components/ResultsLocation'
 import ResultsSpecie from './components/ResultsSpecie'
 import ResultsVehicle from './components/ResultsVehicle'
 import totoro from './img/totoro.jpg'
+import minitotoro from './img/minitotoro.png'
+import minitotoroinvert from './img/minitotoro-invert.png'
 
 
 
@@ -117,7 +119,11 @@ export default class App extends React.Component {
   return (
     <div className="App">
       <header className="App-header">
+      <div className="title">
+        <img className="mini-totoro" src={minitotoroinvert} alt="Mini Totoro"/>
         <h1 onClick={() => this.handleClick()}>スタジオジブリ</h1>
+        <img className="mini-totoro" src={minitotoro} alt="Mini Totoro" />
+      </div>
         <h1 onClick={() => this.handleClick()}>Ghibli Studio Database</h1>
         <nav>
           <button className="button" onClick={() => this.handleFilmsClick()}>

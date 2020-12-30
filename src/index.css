@@ -28,6 +28,12 @@ header h1 {
   cursor: pointer;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
 nav {
   margin-top: 2rem;
   display:  flex;
@@ -43,6 +49,11 @@ nav {
   font-size: 1.3rem !important;
   padding: .5rem !important;
 }
+.mini-totoro {
+  width: 10% !important;
+  top: 0rem !important;
+}
+
 }
 
 .button { 
@@ -120,6 +131,12 @@ section {
   align-items: center;
   border-radius: 5px;
   margin-bottom: 2rem;
+}
+
+.mini-totoro {
+  width: 7%;
+  position: relative;
+  top: 2.5rem;
 }
 
 footer {
