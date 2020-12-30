@@ -181,6 +181,7 @@ export default class App extends React.Component {
       </main>
       <footer>
         <p>All data fetched from <a className="link" rel="noreferrer" target="_blank" href="https://ghibliapi.herokuapp.com/#">Studio Ghibli API</a></p>
+        <p><a className="link" rel="noreferrer" target="_blank" href="https://github.com/Alphasud/Ghibli-Movie-Database">GitHub project repository</a></p>
       </footer> 
       <button id="top-button" onClick={() => this.toTop()}>	&uarr;</button>
     </div>
